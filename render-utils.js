@@ -5,13 +5,15 @@ export function renderParticipant(participant) {
     return participantEl;
 }
 
-// export function renderWorkshop(workshop) {
-//     const workshopDiv = document.createElement('div');
-//     const workshopTitleEl = document.createElement('h3');
+export function renderWorkshop(workshop) {
+    const workshopDiv = document.createElement('div');
+    const workshopTitleEl = document.createElement('h3');
     
-//     workshopDiv.classList.add('workshop');
-//     workshopTitleEl.classList.add('workshop-title');
-//     workshopTitleEl.textContent = workshop.title;
+    workshopDiv.classList.add('workshop');
+    workshopTitleEl.classList.add('workshop-title');
+    workshopTitleEl.textContent = workshop.title;
 
-//     return workshopDiv;
-// }
+    workshopDiv.append(workshopTitleEl);
+    
+    return workshopDiv;
+}

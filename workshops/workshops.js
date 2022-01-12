@@ -1,5 +1,5 @@
 import { checkAuth, deleteParticipant, getWorkshops, logout } from '../fetch-utils.js';
-import { renderParticipant } from '../render-utils.js';
+import { renderParticipant, renderWorkshop } from '../render-utils.js';
 
 checkAuth();
 
@@ -21,12 +21,7 @@ async function displayWorkshops() {
     workshopsContainer.textContent = '';
 
     for (let workshop of workshops) {
-        const workshopDiv = document.createElement('div');
-        const workshopTitleEl = document.createElement('h3');
-
-        workshopDiv.classList.add('workshop');
-        workshopTitleEl.classList.add('workshop-title');
-        workshopTitleEl.textContent = workshop.title;
+        const workshopDiv = renderWorkshop(workshop);
 
         const participantsEl = document.createElement('div');
         participantsEl.classList.add('participants');
@@ -42,7 +37,7 @@ async function displayWorkshops() {
             participantsEl.append(participantEl);
         }
 
-        workshopDiv.append(workshopTitleEl, participantsEl);
+        workshopDiv.append(participantsEl);
         workshopsContainer.append(workshopDiv);
     }
 }
