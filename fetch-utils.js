@@ -23,6 +23,15 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function deleteParticipant(participantID) {
+    const response = await client
+        .from('participants')
+        .delete()
+        .match({ id: participantID });
+    
+    return checkError(response);
+}
+
 export async function getUser() {
     return client.auth.session();
 }
