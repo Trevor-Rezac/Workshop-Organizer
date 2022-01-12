@@ -23,13 +23,13 @@ async function displayWorkshops() {
     for (let workshop of workshops) {
         const workshopDiv = document.createElement('div');
         const workshopTitleEl = document.createElement('h3');
-        const participantsEl = document.createElement('div');
-        
+
         workshopDiv.classList.add('workshop');
         workshopTitleEl.classList.add('workshop-title');
-        participantsEl.classList.add('participants');
-
         workshopTitleEl.textContent = workshop.title;
+
+        const participantsEl = document.createElement('div');
+        participantsEl.classList.add('participants');
 
         for (let participant of workshop.participants) {
             const participantEl = renderParticipant(participant);
