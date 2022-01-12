@@ -125,3 +125,7 @@ label {
     width: 75px;
     margin: 5px;
 }
+
+.participant {
+    cursor: pointer;
+}

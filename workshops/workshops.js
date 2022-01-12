@@ -1,4 +1,5 @@
 import { checkAuth, deleteParticipant, getWorkshops, logout } from '../fetch-utils.js';
+import { renderParticipant } from '../render-utils.js';
 
 checkAuth();
 
@@ -31,9 +32,7 @@ async function displayWorkshops() {
         workshopTitleEl.textContent = workshop.title;
 
         for (let participant of workshop.participants) {
-            const participantEl = document.createElement('p');
-            participantEl.classList.add('participant');
-            participantEl.textContent = `${participant.name} - Age: ${participant.age}`;
+            const participantEl = renderParticipant(participant);
 
             participantEl.addEventListener('click', async() => {
                 await deleteParticipant(participant.id);
