@@ -11,6 +11,16 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function getParticipant(id) {
+    const response = await client
+        .from('participants')
+        .select()
+        .match({ id })
+        .single();
+    
+    return checkError(response);
+}
+
 export async function createParticipant(participant) {
     const response = await client
         .from('participants')

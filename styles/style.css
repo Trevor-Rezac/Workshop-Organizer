@@ -134,3 +134,7 @@ label {
 .participant {
     cursor: pointer;
 }
+
+.participant-container {
+    text-align: center;
+}
