@@ -68,7 +68,8 @@ header img {
 }
 
 p {
-    margin: var(--gutter);
+    width: fit-content;
+    margin: 0 auto;
 }
 
 footer {
@@ -141,4 +142,19 @@ label {
 
 .hidden {
     display: none;
+}
+
+.update-form-container {
+    text-align: center;
+}
+
+.participant-btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.remove-btn {
+    height: 20px;
+    width: fit-content;
+    margin: 5px;
 }

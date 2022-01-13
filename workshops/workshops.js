@@ -29,13 +29,20 @@ async function displayWorkshops() {
         for (let participant of workshop.participants) {
             const participantEl = renderParticipant(participant);
 
-            // participantEl.addEventListener('click', async() => {
-            //     // await deleteParticipant(participant.id);
-                
-            //     await displayWorkshops();
-            // });
+            const participantAndBtnContainer = document.createElement('div');
+            participantAndBtnContainer.classList.add('participant-btn-container');
+            const removeBtn = document.createElement('button');
+            removeBtn.classList.add('remove-btn');
+            removeBtn.textContent = 'Remove';
+    
+            removeBtn.addEventListener('click', async() => {
+                await deleteParticipant(participant.id);
+                await displayWorkshops();
+            });
 
-            participantsEl.append(participantEl);
+            participantAndBtnContainer.append(participantEl, removeBtn);
+            participantsEl.append(participantAndBtnContainer);
+
         }
 
         workshopDiv.append(participantsEl);
