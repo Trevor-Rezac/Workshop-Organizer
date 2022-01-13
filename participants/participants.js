@@ -20,7 +20,8 @@ window.addEventListener('load', async() => {
     for (let workshop of workshops) {
         const workshopEl = document.createElement('option');
         workshopEl.value = workshop.id;
-        workshopEl.textContent = workshop.title;
+        console.log(workshopEl.value);
+        workshopEl.textContent = `(${workshop.id}) ${workshop.title}`;
 
         workshopDrodown.append(workshopEl);
     }

@@ -35,6 +35,22 @@ export async function createParticipant(participant) {
     return checkError(response);
 }
 
+export async function updateParticipant(participantID, participant) {
+
+    const response = await client
+        .from('participants')
+        .update([{
+            name: participant.name,
+            age: participant.age,
+            phone_number: participant.phone_number,
+            email: participant.email,
+            workshop_id: participant.workshop_id,
+        }])
+        .match({ id: participantID });
+
+    return checkError(response);
+}
+
 export async function deleteParticipant(participantID) {
     const response = await client
         .from('participants')
