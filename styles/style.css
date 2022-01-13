@@ -107,6 +107,11 @@ footer {
     margin: 10px;
 }
 
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
 form {
     display: flex;
     flex-direction: column;

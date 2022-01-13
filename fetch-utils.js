@@ -17,6 +17,8 @@ export async function createParticipant(participant) {
         .insert([{
             name: participant.name,
             age: participant.age,
+            phone_number: participant.phone_number,
+            email: participant.email,
             workshop_id: participant.workshop_id,
         }]);
 

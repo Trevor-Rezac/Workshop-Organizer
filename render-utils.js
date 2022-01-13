@@ -1,8 +1,11 @@
 export function renderParticipant(participant) {
+    const a = document.createElement('a');
+    a.href = '../details';
     const participantEl = document.createElement('p');
     participantEl.classList.add('participant');
     participantEl.textContent = `${participant.name} - Age: ${participant.age}`;
-    return participantEl;
+    a.append(participantEl);
+    return a;
 }
 
 export function renderWorkshop(workshop) {
@@ -14,6 +17,7 @@ export function renderWorkshop(workshop) {
     workshopTitleEl.textContent = workshop.title;
 
     workshopDiv.append(workshopTitleEl);
-    
+
     return workshopDiv;
 }
+

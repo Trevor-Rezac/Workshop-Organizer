@@ -10,41 +10,30 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <title>Participant Details</title>
 </head>
 
 <body>
     <header>
+        <div class="nav-links">
         <a href="../workshops/index.html">See Workshops</a>
+        <a href="../participants/index.html">Add Particpants</a>
+        </div>
         <div class="gutter-right logo">
             <img src="../assets/big-logo.png" />
         </div>
     </header>    
     <button id="logout">Logout</button>
     <main>
-        <h1>Add a New Participant</h1>
-
-        <div class="form-container">
-            <form name="participant-form">
-                <input type="text" placeholder="Name" name="name">
-                <input type="number" placeholder="Age" name="age">
-                <input type="number" placeholder="Phone Number" name="phone-number">
-                <input type="text" placeholder="Email Address" name="email">
-                <label>
-                    Workshop
-                <select name="workshop-id">
-
-                </select>
-                </label>
-                <button class="submit-btn">Submit</button>
-            </form>
-
+        <h1 class="participant-name"> Participant </h1>
+        <div class="details-container">
+            
         </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./participants.js"></script>
+    <script type="module" src="./details.js"></script>
 </body>
 
 </html>

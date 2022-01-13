@@ -4,9 +4,9 @@ checkAuth();
 
 const logoutButton = document.getElementById('logout');
 const form = document.querySelector('form');
-const nameInput = document.querySelector('#name-input');
-const ageInput = document.querySelector('#age-input');
-console.log(form, nameInput, ageInput);
+// const nameInput = document.querySelector('#name-input');
+// const ageInput = document.querySelector('#age-input');
+// console.log(form, nameInput, ageInput);
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -32,12 +32,16 @@ form.addEventListener('submit', async(e) => {
     const data = new FormData(form);
     const name = data.get('name');
     const age = data.get('age');
+    const phone_number = data.get('phone-number');
+    const email = data.get('email');
     const workshop = data.get('workshop-id');
-// console.log(name, age, workshop);
+// console.log(name, age, workshop, phone_number, email);
 
     await createParticipant({
         name,
         age,
+        phone_number,
+        email,
         workshop_id: workshop,
     });
 

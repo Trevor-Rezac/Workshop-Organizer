@@ -29,10 +29,11 @@ async function displayWorkshops() {
         for (let participant of workshop.participants) {
             const participantEl = renderParticipant(participant);
 
-            participantEl.addEventListener('click', async() => {
-                await deleteParticipant(participant.id);
-                await displayWorkshops();
-            });
+            // participantEl.addEventListener('click', async() => {
+            //     // await deleteParticipant(participant.id);
+                
+            //     await displayWorkshops();
+            // });
 
             participantsEl.append(participantEl);
         }
